@@ -1,0 +1,15 @@
+{
+  "name": "radica-notaria",
+  "version": "1.0.0",
+  "description": "NotaríaDoc — Suite de automatización documental para Notaría Segunda de Zipaquirá",
+  "scripts": {
+    "start": "serve . --listen $PORT",
+    "dev": "serve . --listen 3000"
+  },
+  "dependencies": {
+    "serve": "^14.2.4"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
