@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NotaríaDoc — Automatización de Escrituras</title>
+  <meta name="description" content="Suite de automatización documental para notaría colombiana · Notaría Segunda de Zipaquirá">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1F4E79',
+            secondary: '#2E75B6',
+            accent: '#D6E4F0',
+          },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    body { background-color: #F8FAFC; }
+
+    @keyframes slideInRight {
+      from { transform: translateX(100%); opacity: 0; }
+      to   { transform: translateX(0);    opacity: 1; }
+    }
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scaleIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to   { transform: scale(1);   opacity: 1; }
+    }
+    @keyframes loadProgress {
+      0%   { width: 0%;  }
+      80%  { width: 85%; }
+      100% { width: 90%; }
+    }
+    @keyframes loadComplete {
+      from { width: 90%; }
+      to   { width: 100%; opacity: 0; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    .slide-in-right    { animation: slideInRight 0.3s cubic-bezier(.22,.68,0,1.2) forwards; }
+    .fade-down         { animation: fadeDown 0.2s ease-out forwards; }
+    .fade-in-up        { animation: fadeInUp 0.35s ease-out forwards; }
+    .scale-in          { animation: scaleIn 0.4s cubic-bezier(.22,.68,0,1.4) forwards; }
+    .fade-in           { animation: fadeIn 0.2s ease-out forwards; }
+    .load-progress     { animation: loadProgress 1.4s ease-out forwards; }
+    .load-complete     { animation: loadComplete 0.3s ease-out forwards; }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="number"]:focus,
+    select:focus {
+      outline: none;
+      border-color: #1F4E79 !important;
+      box-shadow: 0 0 0 3px rgba(31,78,121,0.15) !important;
+    }
+    input[type="radio"] { accent-color: #1F4E79; }
+    input.err, select.err { border-color: #DC2626 !important; }
+
+    ::-webkit-scrollbar       { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #F1F5F9; }
+    ::-webkit-scrollbar-thumb { background: #94A3B8; border-radius: 3px; }
+
+    .overlay-bg {
+      background: rgba(15, 23, 42, 0.45);
+      backdrop-filter: blur(2px);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+  <div id="root"></div>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
